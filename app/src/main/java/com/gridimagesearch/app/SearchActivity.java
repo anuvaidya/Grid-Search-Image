@@ -33,10 +33,17 @@ public class SearchActivity extends ActionBarActivity {
     private String query;
     private  AsyncHttpClient client;
 
+    //public final String tag = getApplication().getPackageName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        Toast.makeText(getApplication(),"inside on create",Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_search);
+
+        Log.d("hello","this is the new search");
+        Toast.makeText(getBaseContext(),"inside on create", Toast.LENGTH_SHORT).show();
 
         client = new AsyncHttpClient();
         setupViews();
@@ -52,17 +59,8 @@ public class SearchActivity extends ActionBarActivity {
     private void setupListeners() {
 
         // when you click on the image on a grid, you want to display in full
-        gvResults.setOnItemClickListener(fullImageDisplayListener);
+      //  gvResults.setOnItemClickListener(fullImageDisplayListener); TODo - undo
         gvResults.setOnScrollListener(myEndlessScrollListener);
-
-
-      /*  gvResults.setOnScrollListener(new EndlessScrollListener() {
-            @Override
-            public void onLoadMore(int page, int totalItemsCount) {
-
-
-            }
-        });*/
 
     }
 
@@ -85,11 +83,13 @@ public class SearchActivity extends ActionBarActivity {
     private void setupAdapters()
     {
         //setting adapter
+        Toast.makeText(getApplication(),"inside adapter",Toast.LENGTH_SHORT).show();
         imageAdapter = new ImageResultArrayAdapter(this,imageResults);
         gvResults.setAdapter(imageAdapter);
 
     }
     private void setupViews() {
+        Toast.makeText(getApplication(),"inside view",Toast.LENGTH_SHORT).show();
         btnSearch = (Button)findViewById(R.id.btnSearch);
         etSearchItem = (EditText)findViewById(R.id.etSearchItem);
         gvResults = (GridView)findViewById(R.id.gvResults);
@@ -157,24 +157,31 @@ public class SearchActivity extends ActionBarActivity {
         Toast.makeText(getBaseContext(),"search button is pressed " + query, Toast.LENGTH_SHORT).show();
         Toast.makeText(getBaseContext(),"on search is pressed the first time",Toast.LENGTH_SHORT).show();
 
-        client.get("https://ajax.googleapis.com/ajax/services/search/images?rsz=8&" +
-                "start=" + totalItemsCount+ "&v=1.0&q=" + Uri.encode(query),
+       // https://www.googleapis.com/customsearch/v1?q=apple&cx=008694621533056856355%3Ak3jmqo__vou&imgColorType=color&imgSize=small&imgType=photo&key=AIzaSyAs9ni18SLQNmYI9jopS20Ktqj5xjV408g
+       // client.get("https://ajax.googleapis.com/ajax/services/search/images?rsz=8&" +
+         //       "start=" + totalItemsCount+ "&v=1.0&q=" + Uri.encode(query),
+        client .get("https://www.googleapis.com/customsearch/v1?q="+ Uri.encode(query)+"&cx=008694621533056856355%3Ak3jmqo__vou&" +
+                "&imgColorType=color&imgSize=small&imgType=photo&key=AIzaSyAs9ni18SLQNmYI9jopS20Ktqj5xjV408g",
                 new JsonHttpResponseHandler() {
                     JSONArray imageJsonResults = null;
                     @Override
                     public void onSuccess(JSONObject response) {
                         //parse the data
                         try {
-                            imageJsonResults = response.getJSONObject("responseData")
-                                    .getJSONArray("results");
-                            Toast.makeText(getBaseContext(),"results_array_length = " +
-                            imageJsonResults.length(),Toast.LENGTH_SHORT).show();
+                            imageJsonResults = response.getJSONArray("items");
+                                  //  .getJSONArray("items");
+                            Toast.makeText(getBaseContext(),"responseData = " +response ,
+                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(),"items_array_length = " +
+                                imageJsonResults.length(),Toast.LENGTH_SHORT).show();
+
+                            Log.d("hello","imageJsonResults = " + imageJsonResults);
 
                             //imageResults.clear();
                             // add the images from json array to our model array imageResults
                             //fromJSONArray is a static method in ImageResult
                             imageResults.addAll(ImageResult.fromJSONArray(imageJsonResults));
-                            //Log.d("DEBUG", imageResults.toString());
+                            Log.d("print the imageResults from searchActivity", imageResults.toString());
 
                             // note: it's a good idea not to use the adapter directly
                             // because the data model and the adapter may not be in sync at times.

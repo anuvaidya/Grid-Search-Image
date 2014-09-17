@@ -1,5 +1,7 @@
 package com.gridimagesearch.app;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,13 +32,16 @@ public class ImageResult implements Serializable{
     {
         // make sure that the parameter string in the json.getstring
         //matches exactly the one in the http request resultdata.
+
+        Log.d("ImageResult", "inside ImageResult");
         try {
-            this.fullUrl = json.getString("url");
-            this.thumbUrl = json.getString("tbUrl");
+          //  this.fullUrl = json.getString("url");
+            this.thumbUrl = json.getString("src");
+          //  this.thumbUrl = json.getString("cse_thumbnail");
 
         } catch (JSONException e) {
            // e.printStackTrace();
-            this.fullUrl = null;
+            //this.fullUrl = null;
             this.thumbUrl = null;
         }
     }
@@ -58,18 +63,44 @@ public class ImageResult implements Serializable{
                 ImageResult newImageResultObject = new ImageResult(array.getJSONObject(i));
                 results.add(newImageResultObject);
                  */
-                results.add(new ImageResult(array.getJSONObject(i)));
+
+                JSONArray temp;
+                JSONObject pagemapJsonObject;
+                JSONObject x = null;
+                Log.d("ImageResult", "input from JSONArray: = "+ array.get(i).toString());
+
+                pagemapJsonObject= array.getJSONObject(i).getJSONObject("pagemap");
+
+                if (!pagemapJsonObject.isNull("cse_image")) {
+                       temp = pagemapJsonObject.getJSONArray("cse_image");
+                        x = (JSONObject) temp.get(0);
+                    Log.d("ImageResult","should print items " + x.toString());
+                    results.add(new ImageResult(x));
+                }
+                       //getJSONArray("cse_image");
+
+
+
+
+                // Log.d("ImageResult", "print the json link " + array.getJSONObject(i).get("image");
+
+                //   Log.d("ImageResult", "should print image? " + array.getJSONArray(i).get(i).toString());
+
+                //  results.add(new ImageResult(array.getJSONObject(i).getJSONObject("image")));
+
+                //  results.add(new ImageResult(null));
+
             } catch (JSONException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
 
         }
         return results;
     }
 
-    public String toString()
+   /* public String toString()
     {
         return this.thumbUrl;
     }
-
+*/
 }

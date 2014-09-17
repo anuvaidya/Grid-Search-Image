@@ -1,12 +1,15 @@
 package com.gridimagesearch.app;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-import com.loopj.android.image.SmartImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -32,6 +35,8 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
    */
     public ImageResultArrayAdapter(Context context, List<ImageResult> images) {
         super(context,R.layout.item_image_result,images);
+
+        Toast.makeText(getContext(),"inside imageResultAdapter ",Toast.LENGTH_SHORT).show();
     }
 
     //change the translation between the data and the view
@@ -50,8 +55,11 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
     {
         //grab the data.
         ImageResult imageInfo = this.getItem(position);
-        //ImageView ivImage;  ---- universal Image Loader
-        SmartImageView ivImage;
+        ImageView ivImage;  //---- universal Image Loader
+        //SmartImageView ivImage;
+
+
+
 
         // convert view is the existing view that we want to reuse
         if (convertView == null)
@@ -61,15 +69,15 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
             // create an inflator object
             LayoutInflater inflater = LayoutInflater.from(getContext());
             // use that inflator to inflate the view (item) that you created
-            //ivImage = (ImageView) inflater.inflate(R.layout.item_image_result,parent,false);
-            ivImage = (SmartImageView) inflater.inflate(R.layout.item_image_result, parent, false);
+            ivImage = (ImageView) inflater.inflate(R.layout.item_image_result,parent,false);
+            //ivImage = (SmartImageView) inflater.inflate(R.layout.item_image_result, parent, false);
 
         }else  {
             // existing view
             // get the image first
             // clear that image so that the next images are loaded by making it transparent
-            //ivImage = (ImageView)convertView;
-            ivImage = (SmartImageView)convertView;
+            ivImage = (ImageView)convertView;
+            //ivImage = (SmartImageView)convertView;
             // setting the view to a blank background
             ivImage.setImageResource(android.R.color.transparent);
         }
@@ -90,7 +98,15 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
         } */
 
        // ivImage.setImageURI();imageInfo.getThumbUrl()
-        ivImage.setImageUrl(imageInfo.getThumbUrl());
+        Log.d("Image Result Adapter", imageInfo.getThumbUrl());  // TESTING
+
+        //ivImage.setImageUrl(imageInfo.getThumbUrl());
+
+        Picasso.with(getContext())
+                .load(imageInfo.getThumbUrl())
+                .noFade()
+                .into(ivImage);
+
         return ivImage;
 
     }
