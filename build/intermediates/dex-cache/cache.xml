@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/jsr305-1.3.9-dadb261ba3f107690a7852159647713e04b88975.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/classes-226d15e00d05d5287549f0460e100d5ec681c4bd.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/13.0/381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7/guava-jdk5-13.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/guava-jdk5-13.0-acc63ba7a67c25ad0ca25f54fea9fea443bc3dd1.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-customsearch/v1-rev46-1.20.0/443a8c2dd62ad521b41b6c82ae3a4024c8a68f0/google-api-services-customsearch-v1-rev46-1.20.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0443a8c2dd62ad521b41b6c82ae3a4024c8a68f0">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/google-api-services-customsearch-v1-rev46-1.20.0-37337c7ab7fe50d9bdb035933b97225ae2040417.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/classes-412e69a53d398dc97d8014e9b43f983fdcdf9e6d.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/commons-io-2.4-769beceba6e3cf67e721b8833a14819d9fa94d88.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.20.0/1d086ac5756475ddf451af2e2df6e288d18608ca/google-oauth-client-1.20.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1d086ac5756475ddf451af2e2df6e288d18608ca">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/google-oauth-client-1.20.0-542f6f320d9a1348686239fe724fa39325ac0cf7.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.20.0/d3e66209ae9e749b2d6833761e7885f60f285564/google-api-client-1.20.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d3e66209ae9e749b2d6833761e7885f60f285564">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/google-api-client-1.20.0-ea97be9a710f6c267258387df6379b7b8c3788ae.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.20.0/93d82db2bca534960253f43424b2ba9d7638b4d2/google-http-client-1.20.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="93d82db2bca534960253f43424b2ba9d7638b4d2">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/google-http-client-1.20.0-532ad31059740e27e1858c2b18981c145b001440.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.20.0/2408070b2abec043624d35b35e30450f1b663858/google-http-client-jackson2-1.20.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2408070b2abec043624d35b35e30450f1b663858">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/google-http-client-jackson2-1.20.0-9c758af1f607871e45272131235df410391a2266.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/org.apache.directory.studio/org.apache.commons.io/2.4/b98d592c582262b3da8a871c7317f4902d98e996/org.apache.commons.io-2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b98d592c582262b3da8a871c7317f4902d98e996">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/org.apache.commons.io-2.4-b8ae40b25fb9eae7e8d4978f0d3486f6a7b03a0a.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.4/3b646ddbdac8a33fc45b64564011da81d23e4635/picasso-2.3.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3b646ddbdac8a33fc45b64564011da81d23e4635">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/picasso-2.3.4-d36999e6a73b2d50db1eaf9646629340c1faa3d5.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-4a836ccbda2b4f6ad6c955b522c7488fcb870342.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.6/a845a88238be0b5be9d238652c1bc0605ef91f52/android-async-http-1.4.6.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.6-3d6921f18d0169a1e33bfdbf839a767dbc44ec8b.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/jackson-core-2.1.3-65a7ba87eeaf858623cce01acb97f49e6ca96c1c.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/libs/android-smart-image-view-1.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d76ea8c3e9a60101244d6d04aff8cc75888570f0">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/android-smart-image-view-1.0.0-cb42de4ab47ecb72737e6dfd9c287b043356390f.jar" />
+    </item>
+    <item
+        jar="/Users/Anu/Documents/android_development/adt-bundle-mac-x86_64-20131030/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/Anu/Desktop/AndroidStudioProjects/Grid-Search-Image-withNewAPI/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-d50b73e1771494bad7438c55de2c27b766323863.jar" />
+    </item>
+
+</items>

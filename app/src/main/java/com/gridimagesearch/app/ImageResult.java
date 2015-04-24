@@ -10,14 +10,17 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Anu on 6/19/14.
+ * data model for the images
+ * This contains the full and thumb url
+ * Adds the images from jsonObject to an ArrayList
  */
-public class ImageResult implements Serializable{
+public class ImageResult implements Serializable {
 
     // you will get the data from http request
 
     private String fullUrl;
     private String thumbUrl;
+    public static String TAG = "ImageResult";
 
     public String getFullUrl() {
         return fullUrl;
@@ -27,80 +30,73 @@ public class ImageResult implements Serializable{
         return thumbUrl;
     }
 
-   //constructor
-    public ImageResult(JSONObject json)
-    {
-        // make sure that the parameter string in the json.getstring
-        //matches exactly the one in the http request resultdata.
+    public ImageResult(String fullUrl, String thumbUrl) {
+        setThumbUrl(thumbUrl);
+        setFullUrl(fullUrl);
 
-        Log.d("ImageResult", "inside ImageResult");
-        try {
-          //  this.fullUrl = json.getString("url");
-            this.thumbUrl = json.getString("src");
-          //  this.thumbUrl = json.getString("cse_thumbnail");
-
-        } catch (JSONException e) {
-           // e.printStackTrace();
-            //this.fullUrl = null;
-            this.thumbUrl = null;
-        }
     }
 
-   /* public static Collection<? extends ImageResult> fromJSONArray(JSONArray imageJsonResults) {
-    }*/
+    public void setThumbUrl(String thumbUrl) {
+        this.thumbUrl = thumbUrl;
+    }
 
-    //iterate thru the array and get the results
-    //
-    public static ArrayList<ImageResult> fromJSONArray(JSONArray array) {
+    public void setFullUrl(String fullUrl) {
+        this.fullUrl = fullUrl;
+    }
+
+    //constructor
+    public ImageResult(JSONObject json) {
+        try {
+            this.thumbUrl = json.getString("src");
+        } catch (JSONException e) {
+
+        }
+
+    }
+
+/*  Results of the image from the browser for search query = apple
+    imageJsonResults = [{"pagemap":{"cse_image":[{"src":"http:\/\/www.cs.columbia.edu\/~sedwards\
+    /apple2fpga\/FPGA-DE2-small.jpg"}],
+    "cse_thumbnail":[{"src":"https:\/\/encrypted-tbn0.gstatic.com\/images
+    ?q=tbn:ANd9GcQ35IE0LGa49jzppeXpWzc7egpn81i2fTSPIBT6VcnhvJ7JoVynp2Ojj3Pp"
+
+
+    */
+
+    public static ArrayList<ImageResult> addFromResponseJSONArray(JSONArray array) {
         ArrayList<ImageResult> results = new ArrayList<ImageResult>();
 
         // each item inside this jsonarray is a dict/json object
-        for (int i = 0; i < array.length(); i++)
-        {
+        for (int i = 0; i < array.length(); i++) {
             try {
-                /* // this constructs a new object -check the constructor
-                // takes a jsonobject
-                ImageResult newImageResultObject = new ImageResult(array.getJSONObject(i));
-                results.add(newImageResultObject);
-                 */
-
-                JSONArray temp;
-                JSONObject pagemapJsonObject;
-                JSONObject x = null;
-                Log.d("ImageResult", "input from JSONArray: = "+ array.get(i).toString());
-
-                pagemapJsonObject= array.getJSONObject(i).getJSONObject("pagemap");
-
-                if (!pagemapJsonObject.isNull("cse_image")) {
-                       temp = pagemapJsonObject.getJSONArray("cse_image");
-                        x = (JSONObject) temp.get(0);
-                    Log.d("ImageResult","should print items " + x.toString());
-                    results.add(new ImageResult(x));
-                }
-                       //getJSONArray("cse_image");
+                JSONArray x = array.getJSONObject(i).getJSONObject("pagemap")
+                        .getJSONArray("cse_thumbnail");
+                Log.d("ImageResult.java","value of x = " + x);
+                JSONObject imageJSonObject = x.getJSONObject(0);
+                Log.d("ImageResult.java","value of imageJSonObject = " + imageJSonObject);
+                Log.d("ImageResult.java", "imageJsonObject = " + imageJSonObject.toString());
 
 
-
-
-                // Log.d("ImageResult", "print the json link " + array.getJSONObject(i).get("image");
-
-                //   Log.d("ImageResult", "should print image? " + array.getJSONArray(i).get(i).toString());
-
-                //  results.add(new ImageResult(array.getJSONObject(i).getJSONObject("image")));
-
-                //  results.add(new ImageResult(null));
-
+                // add the response that contains the image to the arraylist of image
+                if (imageJSonObject != null) {
+                    Log.d("ImageResult", "imageResult is not null");
+                    results.add(new ImageResult(imageJSonObject));
+                } else
+                    Log.d(TAG, "There is no image for this query");
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
 
         }
         return results;
-    }
 
-   /* public String toString()
-    {
-        return this.thumbUrl;
     }
-*/
 }
+
+
+
+
+
+
+
+

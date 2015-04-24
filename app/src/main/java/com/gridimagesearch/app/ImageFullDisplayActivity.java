@@ -5,8 +5,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.loopj.android.image.SmartImageView;
-
 
 public class ImageFullDisplayActivity extends ActionBarActivity {
 
@@ -23,9 +21,9 @@ public class ImageFullDisplayActivity extends ActionBarActivity {
         ImageResult ivImageResult = (ImageResult) getIntent().getSerializableExtra("result");
         // we want to access the smart image view thru which we are going to display the full url
         // instantiate smart image view
-        SmartImageView ivImage = (SmartImageView)findViewById(R.id.ivResult);
+     //   SmartImageView ivImage = (SmartImageView)findViewById(R.id.ivResult);
         //ivImage.setImageUrl(url);
-        ivImage.setImageUrl(ivImageResult.getFullUrl());
+     //   ivImage.setImageUrl(ivImageResult.getFullUrl());
 
         //NOTE WHY DO WE NEED TO USE SERIALIZABLE?
         // SUPPOSE YOU WANT TO PASS THE TITLE, URL TOGETHER, THIS WAY YOU PASS BOTH THE VALUES

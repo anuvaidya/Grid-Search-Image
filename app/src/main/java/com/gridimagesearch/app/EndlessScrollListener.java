@@ -1,8 +1,5 @@
 package com.gridimagesearch.app;
 
-/**
- * Created by Anu on 6/24/14.
- */
 
 // This class copied from
 // https://github.com/thecodepath/android_guides/wiki/Endless-Scrolling-with-AdapterViews
@@ -54,7 +51,15 @@ public abstract class EndlessScrollListener implements AbsListView.OnScrollListe
         // list is invalidated and should be reset back to initial state
        // Toast.makeText(this,"scroll method",Toast.LENGTH_SHORT).show();
 
+        Log.d("Endlessscroll","inside onscroll method");
+        Log.d("Endlessscroll ", "parameters are view, firstvisible item(int),visibleitemcount,totalitemcount"
+        + firstVisibleItem +","+ visibleItemCount + "," + totalItemCount);
+        Log.d("endless scroll","total item count = " + totalItemCount);
+        Log.d("endless scroll","previousTotalItemCount = " + previousTotalItemCount);
+
         if (totalItemCount < previousTotalItemCount) {
+            Log.d("endlessscroll", "totalItemCount < PreviousTotalItemCount, set the currentpage = startingpage index," +
+                    "prev = totalItemcount and loading= true");
             this.currentPage = this.startingPageIndex;
             this.previousTotalItemCount = totalItemCount;
             if (totalItemCount == 0) {
@@ -66,6 +71,8 @@ public abstract class EndlessScrollListener implements AbsListView.OnScrollListe
         // changed, if so we conclude it has finished loading and update the current page
         // number and total item count.
         if (loading && (totalItemCount > previousTotalItemCount)) {
+            Log.d("endlessscroll", "totalItemCount > PreviousTotalItemCount, set the currentpage to startingpage index," +
+                    "prev = totalItemcount and loading= false, current page ++");
             loading = false;
             previousTotalItemCount = totalItemCount;
             currentPage++;
@@ -76,10 +83,10 @@ public abstract class EndlessScrollListener implements AbsListView.OnScrollListe
         // If we do need to reload some more data, we execute onLoadMore to fetch the data.
         if (!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem
                 + visibleThreshold)) {
-          //  Toast.makeText((Context) EndlessScrollListener.class,"load more page when you scroll", Toast.LENGTH_SHORT).show();
-            Log.i("DEBUG","load more items on scroll");
+            Log.d("endlessscroll","not loading and totalitemcount - visiblecount < firstvisible+visiblethreshhold");
+            Log.d("endlesscroll","load more items on scroll: call onLoadMore(page+1,totalItemcount)");
             onLoadMore(currentPage + 1, totalItemCount);
-            //Toast.makeText
+
             loading = true;
         }
     }

@@ -1,7 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/ivItemResult"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        ></ImageView>
 
-<com.loopj.android.image.SmartImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="75dp" android:layout_height="75dp">
-
-</com.loopj.android.image.SmartImageView>
+</LinearLayout>
